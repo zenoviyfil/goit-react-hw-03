@@ -1,16 +1,16 @@
 import css from './Contact.module.css'
 import { useId } from 'react'
 
-const Contact = ({name, number, nameFieldId, numberFieldId}) => {
-  
+const Contact = ({ data: { id, name, number}, onDelete }) => {
+
   return (
-    <div>
-      <div className="contactInfo">
-        <label htmlFor='name' id={nameFieldId}>{name}</label>
-        <label htmlFor="number" id={numberFieldId}>{number}</label>
+    <>
+      <div key={id}>
+        <p>{name}</p>
+        <p>{number}</p>
       </div>
-      <button>Delete</button>
-    </div>
+      <button onClick={() => onDelete(id)}>Delete</button>
+    </>
   )
 }
 

@@ -1,29 +1,25 @@
 import css from './ContactForm.module.css'
 import { Formik, Form, ErrorMessage } from 'formik';
 import { useId } from 'react';
+import { date } from 'yup';
 
-const ContactForm = ({ }) => {
-  const nameFieldId = useId();
-  const numberFieldId = useId();
+const ContactForm = ({ onAdd }) => {
+  const handleSubmit = e => {
+    e.preventDefault()
+    onAdd({
+      id: Date.now(),
+      name: e.target.elements.text.value,
+      number: e.target.elements.number.value
+    })
+    e.target.reset()
+  }
 
-  return (
-  <Formik>
-    <Form className={css.formContainer}>
-      <div>
-        <label htmlFor={nameFieldId}>Name</label>
-        <input type='text' name='name' id={nameFieldId}></input>
-        <ErrorMessage name='name' as='span'></ErrorMessage>
-      </div>
-
-      <div>
-        <label htmlFor={numberFieldId}>Number</label>
-        <input type='number' name='number' id={numberFieldId}></input>
-        <ErrorMessage name='number' as='span'></ErrorMessage>
-      </div>
-
+  return(
+    <form onSubmit={handleSubmit}>
+      <input type="text" name='text'/>
+      <input type="number" name='number'/>
       <button type='submit'>Add contact</button>
-    </Form>
-  </Formik>
+    </form>
   )
 };
 
