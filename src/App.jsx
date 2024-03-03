@@ -14,7 +14,6 @@ function App() {
     {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
   ]
   )
-  const [filter, setFilter] = useState('')
 
   const addContact = (newContact) => {
     setContacts((initContacts) => {
@@ -28,22 +27,20 @@ function App() {
     })
   }
 
-  const searchContacts = contacts.filter((contact) => contact.name.toLowerCase().includes(filter.toLowerCase()))
   //---------------------------------------------
 
   // Search Box
-  const [inputValue, setInputValue] = useState("");
+  const [filter, setFilter] = useState('')
 
-  const handleSearch = (event) => {
-    setInputValue(event.target.value);
-  };
+  const searchContacts = contacts.filter((contact) => contact.name.toLowerCase().includes(filter.toLowerCase()))
+
  //-------------------------------------------------
 
   return (
     <div>
-      <h1>Phonebook</h1>
+      <h1 className='header'>Phonebook</h1>
       <ContactForm onAdd={addContact}/>
-      <SearchBox value={inputValue} handleSearch={handleSearch}/>
+      <SearchBox value={filter} onSearch={setFilter}/>
       <ContactList contacts={searchContacts} onDelete={deleteContact}/>
     </div>
   )

@@ -15,10 +15,10 @@ const ContactForm = ({ onAdd }) => {
   }
 
   return(
-    <form onSubmit={handleSubmit}>
-      <input type="text" name='text'/>
-      <input type="number" name='number'/>
-      <button type='submit'>Add contact</button>
+    <form className={css.form} onSubmit={handleSubmit}>
+      <input className={css.formName} type="text" name='text'/>
+      <input className={css.formNumb} type="number" name='number'/>
+      <button className={css.formBtn} type='submit'>Add contact</button>
     </form>
   )
 };

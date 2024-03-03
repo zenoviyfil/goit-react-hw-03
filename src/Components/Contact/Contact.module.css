@@ -1,0 +1,28 @@
+.contactContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.contactInfo {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.contactName {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.contactNumber {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
