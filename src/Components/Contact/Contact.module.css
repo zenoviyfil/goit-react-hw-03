@@ -26,3 +26,18 @@
     justify-content: flex-start;
     align-items: center;
 }
+
+.contactBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.deleteBtnIcon {
+    margin: 0 5px;
+}
+
+.liIcon {
+    margin: 0 5px;
+}
