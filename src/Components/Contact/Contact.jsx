@@ -1,4 +1,3 @@
-import { useId } from 'react';
 import css from './Contact.module.css'
 import { FaUser, FaPhone, FaMinus } from "react-icons/fa";
 

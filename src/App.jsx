@@ -12,7 +12,7 @@ const contactsData = [
 ];
 
 function App() {
-  // Contact Form
+
   const [contacts, setContacts] = useState(() => {
     const stringMails = localStorage.getItem('contacts')
     if (!stringMails) return contactsData;
@@ -37,14 +37,9 @@ function App() {
     })
   }
 
-  //---------------------------------------------
-
-  // Search Box
   const [filter, setFilter] = useState('')
 
   const searchContacts = contacts.filter((contact) => contact.name.toLowerCase().includes(filter.toLowerCase()))
-
- //-------------------------------------------------
 
   return (
     <div>
