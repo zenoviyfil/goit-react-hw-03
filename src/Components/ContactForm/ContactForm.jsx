@@ -38,7 +38,7 @@ const ContactForm = ({ onAdd }) => {
         />
       </label>
       <label className={css.inputLabelNumber}><FaPhone className={css.labelIcon}/>
-        <Field className={css.formNumb} type='tel' name='number' placeholder='000-00-00'/>
+        <Field className={css.formNumb} type='tel' name='number' placeholder='+380994687989'/>
         <ErrorMessage 
         className={css.errorMsg}
         name="number"
